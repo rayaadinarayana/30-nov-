@@ -16,14 +16,29 @@ function App(){
 export default App*/
 /*import PropsExample from "./PropsExample"
 import FuncPropsExample from "./FuncPropsExample"
-import StateExample from "./StateExample"*/
-import Events from "./Events"
+import StateExample from "./StateExample"
+import Events from "./Events"*/
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Home from './Component/Home'
+import About from './Component/About'
+import Contact from './Component/Contact'
+import Navbar from './Component/Navbar'
+import NotFound from './Component/NotFound'
 function App(){
   return(
     <div>
-      <h1>learn about events</h1>
+      <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
+      </BrowserRouter>
+      {/*<h1>learn about events</h1>
       <Events/>
-       {/*<StateExample/>
+       <StateExample/>
    
     <h1>this is about PropsExample</h1>
     <PropsExample name="ravi" age="20"/>
